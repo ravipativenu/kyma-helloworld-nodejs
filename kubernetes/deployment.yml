@@ -1,0 +1,27 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "deployment-kyma-helloworld-nodejs"
+  labels:
+    app: "deployment-kyma-helloworld-nodejs"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "kyma-helloworld-nodejs"
+  template:
+    metadata:
+      labels:
+        app: "kyma-helloworld-nodejs"
+    spec:
+      containers:
+        - name: "kyma-helloworld-nodejs-container"
+          image: "ravipativenu/kyma-helloworld-nodejs"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
