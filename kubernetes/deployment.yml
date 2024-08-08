@@ -19,6 +19,10 @@ spec:
       containers:
         - name: "kyma-helloworld-nodejs-container"
           image: "ravipativenu/kyma-helloworld-nodejs"
+          volumeMounts:
+          - name: my-xsuaa-secret-volume
+            mountPath: /etc/secrets/sapcp/xauaa/my-xsuaa-secret-volume
+            readOnly: true
           resources:
             requests:
               memory: "64Mi"
@@ -26,3 +30,7 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+      volumes:
+      - name: my-xsuaa-secret-volume
+        secret:
+          secretName: my-xsuaa-secret

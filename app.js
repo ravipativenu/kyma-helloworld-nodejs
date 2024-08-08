@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+const { readK8SServices } = require('./lib/k8s');
 
 app.get('/', function (req, res) {
   let obj = {
@@ -7,6 +8,7 @@ app.get('/', function (req, res) {
       "/ping",
       "/current-date",
       "/fibo/:n",
+      "/k8sservices"
     ]
   };
   res.send(obj);
@@ -30,6 +32,11 @@ app.get('/fibo/:n', function (req, res) {
     name: "fibo",
     value: fibo(req.params.n)
   };
+  res.send(obj);
+});
+
+app.get('/k8sservices', function (req, res) {
+  let obj = readK8SServices();
   res.send(obj);
 });
 

@@ -152,3 +152,23 @@ View container logs
 
 </br>
 
+#### Create service instances
+
+</br>
+
+![alt text](images/IMG21.PNG)
+
+</br>
+
+#### Create service binding and secret
+
+</br>
+
+![alt text](images/IMG22.PNG)
+
+</br>
+
+![alt text](images/IMG23.PNG)
+
+</br>
+
