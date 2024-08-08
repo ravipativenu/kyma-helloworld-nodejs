@@ -136,8 +136,7 @@ View container logs
 | ***Deployment***      | ***Name***: deployment-kyma-helloworld-nodejs </br> ***Pod Name***: deployment-kyma-helloworld-nodejs-7684d89f54-slg6j  |
 | ***Replica Set***     | ***Name***: deployment-kyma-helloworld-nodejs-7684d89f54 </br> ***Controlled By***: Deployment (deployment-kyma-helloworld-nodejs) </br> ***Limits***: CPU, Memory </br> ***Requests***: CPU, Memory    </br> ***Pod Name***: deployment-kyma-helloworld-nodejs-7684d89f54-slg6j                 |
 | ***Pod***             | ***Name***: deployment-kyma-helloworld-nodejs-7684d89f54-slg6j  </br> ***Controlled By***: ReplicaSet (deployment-kyma-helloworld-nodejs-7684d89f54) </br> ***Containers***: kyma-helloworld-nodejs-container </br> ***Image***: ravipativenu/kyma-helloworld-nodejs|
-| ***Service***         | ***Name***: service-kyma-helloworld-nodejs </br> ***Service Type***: LoadBalancer </br> ***Cluster IP***:
-100.108.48.232 </br> ***Ports***: (80) --> (3000) </br> ***External IPs***: a7153076705b24c29b73ce3379116f5e-154082666.us-east-1.elb.amazonaws.com </br> ***Pod***: deployment-kyma-helloworld-nodejs-7684d89f54-slg6j                                                                                                            |
+| ***Service***         | ***Name***: service-kyma-helloworld-nodejs </br> ***Service Type***: LoadBalancer </br> ***Cluster IP***: 100.108.48.232 </br> ***Ports***: (80) --> (3000) </br> ***External IPs***: a7153076705b24c29b73ce3379116f5e-154082666.us-east-1.elb.amazonaws.com </br> ***Pod***: deployment-kyma-helloworld-nodejs-7684d89f54-slg6j                                                                                                            |
 
 </br>
 
