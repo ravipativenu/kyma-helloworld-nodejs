@@ -3,6 +3,7 @@ apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
   name: "deployment-kyma-helloworld-nodejs"
+  namespace: "hello"
   labels:
     app: "deployment-kyma-helloworld-nodejs"
 spec:
