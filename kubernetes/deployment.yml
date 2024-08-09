@@ -21,7 +21,10 @@ spec:
           image: "ravipativenu/kyma-helloworld-nodejs"
           volumeMounts:
           - name: my-xsuaa-secret-volume
-            mountPath: /etc/secrets/sapcp/xauaa/my-xsuaa-secret-volume
+            mountPath: /etc/secrets/sapcp/xsuaa/my-xsuaa-secret-volume
+            readOnly: true
+          - name: my-destination-secret-volume
+            mountPath: /etc/secrets/sapcp/destination/my-destination-secret-volume
             readOnly: true
           resources:
             requests:
@@ -34,3 +37,6 @@ spec:
       - name: my-xsuaa-secret-volume
         secret:
           secretName: my-xsuaa-secret
+      - name: my-destination-secret-volume
+        secret:
+          secretName: my-destination-secret
