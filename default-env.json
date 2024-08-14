@@ -1,0 +1,9 @@
+{
+  "destinations" : [ 
+    { 
+      "name":"destination_bing", 
+      "url":"https://www.bing.com/", 
+      "forwardAuthToken": true 
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+'use strict';
+const connect = require('../utils/connect');
+const loggerUtil = require('../utils/logger');
+
+module.exports = function () {
+  let logger = loggerUtil.getLogger('/connect');
+  logger.info("...connect...")
+  let app = connect();
+  logger.info(app);
+  app._store = {};
+  app.set = function (key, value) {
+    app._store[key] = value;
+  };
+  app.get = function (key) {
+    return app._store[key];
+  };
+  return app;
+};

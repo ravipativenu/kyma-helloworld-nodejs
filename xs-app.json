@@ -1,0 +1,15 @@
+{
+    "welcomeFile": "index.html",
+    "authenticationMethod": "none",    
+    "routes": [
+        {
+            "source": "^/bingroute/(.*)$",
+            "target": "$1",
+            "destination": "destination_bing"
+        },
+        {
+            "source": "^/(.*)",
+            "localDir": "resources"
+        }
+    ]
+}

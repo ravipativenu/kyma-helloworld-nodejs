@@ -201,7 +201,15 @@ View container logs
 
 </br>
 
+http://a7153076705b24c29b73ce3379116f5e-154082666.us-east-1.elb.amazonaws.com/k8sservices
+
+</br>
+
 ![alt text](images/IMG28.PNG)
+
+</br>
+
+#### WSProxy
 
 </br>
 
