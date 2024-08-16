@@ -16,15 +16,15 @@
 
 <details>
 
-</br>
-</br>
-
-
-<details>
-
 <summary>env - servicebindingservice - readservicebindingservices</summary>
 
 </br>
+
+![alt text](../../images/approuter/env/IMG9.PNG)
+
+</br>
+
+## Testing
 
 ![alt text](../../images/approuter/env/IMG6.PNG)
 
