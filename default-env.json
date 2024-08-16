@@ -1,9 +1,37 @@
 {
-  "destinations" : [ 
-    { 
-      "name":"destination_bing", 
-      "url":"https://www.bing.com/", 
-      "forwardAuthToken": true 
+  "destinations": [
+    {
+      "name": "destination_bing",
+      "url": "https://www.bing.com/",
+      "forwardAuthToken": true
     }
-  ]
+  ],
+  "SERVICE_BINDING_ROOT" : "C:\\Users\\vravipati\\OneDrive - Hitachi Vantara\\Documents\\GitHub\\kyma-helloworld-nodejs\\bindings",
+  "VCAP_SERVICES": {
+    "xsuaa": [
+      {
+        "tags": [
+          "xsuaa"
+        ],
+        "name": "my-xsuaa",
+        "credentials": {
+          "clientid": "sb-my-app!t97041",
+          "clientsecret": "V0tFg1aaRjzLbvHrFMJqp/XCokA=",
+          "url": "https://5271f3betrial.authentication.us10.hana.ondemand.com",
+          "identityzone": "5271f3betrial",
+          "identityzoneid": "48079d1c-66b5-4065-9baa-a194b364176f",
+          "tenantid": "48079d1c-66b5-4065-9baa-a194b364176f",
+          "tenantmode": "dedicated",
+          "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+          "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+          "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzgVoz/0P8rJuBaJK61+g\nyPPE+Amk1hTnty1Ca0vFTdY/mPAdKj2QJWLxLFcTxJqD6KCc5AI4eODK+sGyIDvQ\n8I9gvzLOU86ReUoWlzSEK02N8mAOVW2FEpr5GkjAxCcU7inmyhZDCqcbU5Ke2Cy4\n1aBkWjWnTpIFirsGoLa191AReYzaWxO0befJvU7KoQcl73YdcKzTfWOVsryBKcOD\nhr+/FCa6oy5WumwHGT5L6/nelgoda1RIdoNc+4fF1fSllCytW5rZOww3lBfvyeE5\n/2gZMq+95Xh01CPm4sTj0j7L/nczpVTZ2G+BgPGLem1VCBjIIDzuEqHEXAdbzgOu\nowIDAQAB\n-----END PUBLIC KEY-----",
+          "xsappname": "my-app!t97041",
+          "subaccountid": "48079d1c-66b5-4065-9baa-a194b364176f",
+          "uaadomain": "authentication.us10.hana.ondemand.com",
+          "zoneid": "48079d1c-66b5-4065-9baa-a194b364176f",
+          "credential-type": "instance-secret"
+        }
+      }
+    ]
+  }
 }
