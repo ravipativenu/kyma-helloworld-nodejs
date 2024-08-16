@@ -22,7 +22,9 @@ app.get('/', function (req, res) {
       "/getrouterconfig",
       "/env/xsenv/loaddefaultservices",
       "/env/xsenv/filterservices",
-      "/env/servicebindingservice/readfiles"
+      "/env/servicebindingservice/readfiles",
+      "/env/servicebindingservice/parseproperties",
+      "/env/servicebindingservice/readservicebindingservices"
     ]
   };
   res.send(obj);
@@ -79,14 +81,32 @@ app.get('/env/xsenv/filterservices', function (req, res) {
 });
 
 app.get('/env/servicebindingservice/readservicebindingservices', function (req, res) {
-  let serviceBindingRoot = servicebingindservices.readServiceBindingServices();
-  res.send(serviceBindingRoot);
+  let bindings = servicebingindservices.readServiceBindingServices();
+  res.send(bindings);
 });
 
 app.get('/env/servicebindingservice/readfiles', function (req, res) {
   let directoryData = servicebingindservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
   res.send(directoryData);
 });
+
+
+app.get('/env/servicebindingservice/parseproperties', function (req, res) {
+  let directoryData = servicebingindservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
+  let bindingData = servicebingindservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).metaDataProperties);
+  bindingData.credentials = servicebingindservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).credentialProperties);
+  res.send(bindingData);
+});
+
+app.get('/env/servicebindingservice/readbinding', function (req, res) {
+  let directoryData = servicebingindservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
+  let bindingData = servicebingindservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).metaDataProperties);
+  bindingData.credentials = servicebingindservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).credentialProperties);
+  res.send(bindingData);
+});
+
+
+
 
 
 app.listen(3000, function () {

@@ -16,7 +16,36 @@
 
 <details>
 
-<summary>env - servicebindingservice</summary>
+</br>
+</br>
+
+
+<details>
+
+<summary>env - servicebindingservice - readservicebindingservices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG6.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG7.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG8.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - servicebindingservice - readfiles</summary>
 
 </br>
 
