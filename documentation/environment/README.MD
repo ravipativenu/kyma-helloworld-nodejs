@@ -14,6 +14,33 @@
 </br>
 </br>
 
+
+<details>
+
+<summary>env - xsservices - readservices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG22.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG23.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG12.PNG)
+
+</br>
+![alt text](../../images/approuter/env/IMG13.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
 <details>
 
 <summary>env - servicebindingservice - readservicebindingservices</summary>

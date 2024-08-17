@@ -20,6 +20,7 @@ app.get('/', function (req, res) {
       "/utils/vcaputils/getdestenv",
       "/utils/vcaputils/getserviceenv",
       "/getrouterconfig",
+      "/env/xsservices/readservices",
       "/env/xsservices/loaddefaultservices",
       "/env/xsservices/filterservices",
       "/env/servicebindingservice/readservicebindingservices",
@@ -97,6 +98,11 @@ app.get('/env/servicebindingservice/parseproperties', function (req, res) {
 app.get('/env/servicebindingservice/readk8sservices', function (req, res) {
   let kymaservices = k8sservices.readK8SServices();
   res.send(kymaservices);
+})
+
+app.get('/env/xsservices/readservices', function (req, res) {
+  let services = xsservices.readServices();
+  res.send(services);
 })
 
 app.listen(3000, function () {
