@@ -72,3 +72,39 @@
 </details>
 
 
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readk8sservices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG10.PNG)
+
+</br>
+
+#### Testing
+
+</br>
+
+![alt text](../../images/approuter/env/IMG11.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG12.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG13.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG14.PNG)
+
+</br>
+
+</details>
+
+

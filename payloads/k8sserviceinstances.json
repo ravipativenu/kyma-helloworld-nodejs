@@ -1,0 +1,234 @@
+{
+    "my-destination-secret-volume": {
+        "credentials": {
+            ".metadata": {
+                "credentialProperties": [
+                    {
+                        "name": "clientid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientsecret",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instanceid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uaadomain",
+                        "format": "text"
+                    },
+                    {
+                        "name": "credential-type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "identityzone",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantmode",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uri",
+                        "format": "text"
+                    },
+                    {
+                        "name": "url",
+                        "format": "text"
+                    },
+                    {
+                        "name": "verificationkey",
+                        "format": "text"
+                    },
+                    {
+                        "name": "xsappname",
+                        "format": "text"
+                    }
+                ],
+                "metaDataProperties": [
+                    {
+                        "name": "instance_name",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instance_guid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "plan",
+                        "format": "text"
+                    },
+                    {
+                        "name": "label",
+                        "format": "text"
+                    },
+                    {
+                        "name": "type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tags",
+                        "format": "json"
+                    }
+                ]
+            },
+            "clientid": "sb-clonefef3295e40c74143b78ed1bc64eac795!b316823|destination-xsappname!b62",
+            "clientsecret": "5ffc7ebd-e83a-4f08-bb1a-f4aacf0262b5$VhgzQZfKk9elYphcvT4g_l-PNkvagaE7TqWXWfvgtco=",
+            "credential-type": "binding-secret",
+            "identityzone": "584ad640trial",
+            "instance_guid": "fef3295e-40c7-4143-b78e-d1bc64eac795",
+            "instance_name": "my-destination-instance",
+            "instanceid": "fef3295e-40c7-4143-b78e-d1bc64eac795",
+            "label": "destination",
+            "plan": "lite",
+            "tags": "[\"destination\",\"conn\",\"connsvc\"]",
+            "tenantid": "3b7459f3-7784-4693-a447-a313f3a3ce32",
+            "tenantmode": "dedicated",
+            "type": "destination",
+            "uaadomain": "authentication.us10.hana.ondemand.com",
+            "uri": "https://destination-configuration.cfapps.us10.hana.ondemand.com",
+            "url": "https://584ad640trial.authentication.us10.hana.ondemand.com",
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEMlSrW+6ZN50rpDFJmC\nhK6RpNGzzm2QfOWv70RZKcOPXtlw3GHt2sdLsTLCxP0/sNdgVG6Azk9Z+q47filY\nFb1ltex1Hl/S8G1BRp28RhMyBYSvP2lTngwmc8pfUpoSsbKKzEiWH8s1fuz5Hoaf\npogC1zfEhMmW/qBgXv74z9QkG1VrYhRo6NCpEK9JYXO/lIczk+1GCItu5ULlxdga\nCNdwILBi8ffiYMwWELRGyvj3mUycyxlxE42BSadlQTIbVHh45r3iB84bUuEeWVgJ\nDyEtVqXHwmjTfAyLfKW7O5T8FNYfD6PJYoCzIpKQolqZLkLua0agZYYLABDsUv7b\ngQIDAQAB\n-----END PUBLIC KEY-----",
+            "xsappname": "clonefef3295e40c74143b78ed1bc64eac795!b316823|destination-xsappname!b62"
+        },
+        "name": "my-destination-secret-volume",
+        "label": "destination",
+        "tags": [
+            "destination",
+            "conn",
+            "connsvc"
+        ]
+    },
+    "my-xsuaa-secret-volume": {
+        "credentials": {
+            ".metadata": {
+                "credentialProperties": [
+                    {
+                        "name": "identityzone",
+                        "format": "text"
+                    },
+                    {
+                        "name": "serviceInstanceId",
+                        "format": "text"
+                    },
+                    {
+                        "name": "sburl",
+                        "format": "text"
+                    },
+                    {
+                        "name": "zoneid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantmode",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uaadomain",
+                        "format": "text"
+                    },
+                    {
+                        "name": "url",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientsecret",
+                        "format": "text"
+                    },
+                    {
+                        "name": "credential-type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "identityzoneid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "xsappname",
+                        "format": "text"
+                    },
+                    {
+                        "name": "apiurl",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "subaccountid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "verificationkey",
+                        "format": "text"
+                    }
+                ],
+                "metaDataProperties": [
+                    {
+                        "name": "instance_name",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instance_guid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "plan",
+                        "format": "text"
+                    },
+                    {
+                        "name": "label",
+                        "format": "text"
+                    },
+                    {
+                        "name": "type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tags",
+                        "format": "json"
+                    }
+                ]
+            },
+            "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+            "clientid": "sb-na-8e3886b4-92bd-4da9-ab58-541be4b1ea58!t316823",
+            "clientsecret": "02cec861-929a-49ef-8c3b-95dcf86d8cb7$_rZlhZVQgy8Svoj_0QWk_otbRf6hgdnlSYWWWDZyYPs=",
+            "credential-type": "binding-secret",
+            "identityzone": "584ad640trial",
+            "identityzoneid": "3b7459f3-7784-4693-a447-a313f3a3ce32",
+            "instance_guid": "8ed337ca-f934-482a-b3d2-bdf1831ec0f6",
+            "instance_name": "my-xsuaa-instance",
+            "label": "xsuaa",
+            "plan": "application",
+            "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+            "serviceInstanceId": "8ed337ca-f934-482a-b3d2-bdf1831ec0f6",
+            "subaccountid": "3b7459f3-7784-4693-a447-a313f3a3ce32",
+            "tags": "[\"xsuaa\"]",
+            "tenantid": "3b7459f3-7784-4693-a447-a313f3a3ce32",
+            "tenantmode": "shared",
+            "type": "xsuaa",
+            "uaadomain": "authentication.us10.hana.ondemand.com",
+            "url": "https://584ad640trial.authentication.us10.hana.ondemand.com",
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEMlSrW+6ZN50rpDFJmC\nhK6RpNGzzm2QfOWv70RZKcOPXtlw3GHt2sdLsTLCxP0/sNdgVG6Azk9Z+q47filY\nFb1ltex1Hl/S8G1BRp28RhMyBYSvP2lTngwmc8pfUpoSsbKKzEiWH8s1fuz5Hoaf\npogC1zfEhMmW/qBgXv74z9QkG1VrYhRo6NCpEK9JYXO/lIczk+1GCItu5ULlxdga\nCNdwILBi8ffiYMwWELRGyvj3mUycyxlxE42BSadlQTIbVHh45r3iB84bUuEeWVgJ\nDyEtVqXHwmjTfAyLfKW7O5T8FNYfD6PJYoCzIpKQolqZLkLua0agZYYLABDsUv7b\ngQIDAQAB\n-----END PUBLIC KEY-----",
+            "xsappname": "na-8e3886b4-92bd-4da9-ab58-541be4b1ea58!t316823",
+            "zoneid": "3b7459f3-7784-4693-a447-a313f3a3ce32"
+        },
+        "name": "my-xsuaa-secret-volume",
+        "label": "xsuaa",
+        "tags": [
+            "xsuaa"
+        ]
+    }
+}

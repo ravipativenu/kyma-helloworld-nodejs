@@ -14,4 +14,5 @@ COPY --from=builder /opt/src/node_modules ./node_modules
 COPY package.json .
 COPY app.js .
 COPY lib/ ./lib
+COPY xs-app.json .
 CMD ["npm", "start"]

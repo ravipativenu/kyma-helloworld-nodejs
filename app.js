@@ -1,12 +1,12 @@
 let express = require('express');
 const path = require('path');
-let app = express();
-const { readK8SServices } = require('./lib/k8s');
 const { getDestEnv, getServiceEnv } = require("./lib/utils/vcap-utils")
 const bootstrap = require('./lib/bootstrap')
 const xsservices = require('./lib/xsenv/lib/xsservices')
 const servicebindingservices = require('./lib/xsenv/lib/serviceBindingService')
 const k8sservices = require('./lib/xsenv/lib/k8sservice')
+
+let app = express();
 
 let options = {};
 let routerConfig = {};
@@ -17,16 +17,15 @@ app.get('/', function (req, res) {
       "/ping",
       "/current-date",
       "/fibo/:n",
-      "/k8sservices",
       "/utils/vcaputils/getdestenv",
       "/utils/vcaputils/getserviceenv",
       "/getrouterconfig",
-      "/env/xsenv/loaddefaultservices",
-      "/env/xsenv/filterservices",
+      "/env/xsservices/loaddefaultservices",
+      "/env/xsservices/filterservices",
+      "/env/servicebindingservice/readservicebindingservices",
       "/env/servicebindingservice/readfiles",
       "/env/servicebindingservice/parseproperties",
-      "/env/servicebindingservice/readservicebindingservices",
-      "/env/servicebindingservice/readk8sservices"
+      "/env/k8sservice/readk8sservices"
     ]
   };
   res.send(obj);
@@ -53,11 +52,6 @@ app.get('/fibo/:n', function (req, res) {
   res.send(obj);
 });
 
-app.get('/k8sservices', function (req, res) {
-  let obj = readK8SServices();
-  res.send(obj);
-});
-
 app.get('/utils/vcaputils/getdestenv', function (req, res) {
   let obj = getDestEnv();
   res.send(obj);
@@ -72,12 +66,12 @@ app.get('/getrouterconfig', function (req, res) {
   res.send(routerConfig);
 });
 
-app.get('/env/xsenv/loaddefaultservices', function (req, res) {
+app.get('/env/xsservices/loaddefaultservices', function (req, res) {
   let defaultServices = xsservices.loadDefaultServices(path.join(process.cwd(), 'default-services.json'));
   res.send(defaultServices);
 });
 
-app.get('/env/xsenv/filterservices', function (req, res) {
+app.get('/env/xsservices/filterservices', function (req, res) {
   let defaultServices = xsservices.filterServices({ "name" : "my-xsuaa" } );
   res.send(defaultServices);
 });
@@ -100,20 +94,10 @@ app.get('/env/servicebindingservice/parseproperties', function (req, res) {
   res.send(bindingData);
 });
 
-app.get('/env/servicebindingservice/readbinding', function (req, res) {
-  let directoryData = servicebindingservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
-  let bindingData = servicebindingservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).metaDataProperties);
-  bindingData.credentials = servicebindingservices.parseProperties(directoryData, JSON.parse(directoryData[".metadata"]).credentialProperties);
-  res.send(bindingData);
-});
-
 app.get('/env/servicebindingservice/readk8sservices', function (req, res) {
-  let k8sservices = k8sservices.readK8SServices();
-  res.send(bindings);
+  let kymaservices = k8sservices.readK8SServices();
+  res.send(kymaservices);
 })
-
-
-
 
 app.listen(3000, function () {
   routerConfig = bootstrap(options);
