@@ -107,4 +107,108 @@
 
 </details>
 
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readSecrets</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG15.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readServiceInstances</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG16.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readInstance</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG17.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readFiles</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG18.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - readFileContent</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG19.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - isJsonOject</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG20.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - k8sservice - parseTags</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG21.PNG)
+
+</br>
+
+</details>
 
