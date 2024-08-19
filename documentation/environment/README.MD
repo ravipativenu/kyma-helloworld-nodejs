@@ -1,7 +1,21 @@
+<details>
+
+<summary>env - loadenv - loadenv</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG27.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
 
 <details>
 
-<summary>env - xsenv</summary>
+<summary>env - xsservices - loaddefaultservices</summary>
 
 </br>
 
@@ -32,7 +46,43 @@
 ![alt text](../../images/approuter/env/IMG12.PNG)
 
 </br>
+
 ![alt text](../../images/approuter/env/IMG13.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - xsservices - filterServices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG29.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - cfservice - readCFServices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG28.PNG)
 
 </br>
 
@@ -234,6 +284,33 @@
 </br>
 
 ![alt text](../../images/approuter/env/IMG21.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>env - cacert - loadcCertificates</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG24.PNG)
+
+</br>
+
+#### Testing
+
+</br>
+
+![alt text](../../images/approuter/env/IMG25.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG26.PNG)
 
 </br>
 

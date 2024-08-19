@@ -16,4 +16,21 @@
 
 </details>
 
+</br>
+</br>
+
+<details>
+
+<summary>lib - environment - getWorkingDirectory</summary>
+
+</br>
+
+![alt text](../../images/approuter/IMG3.PNG)
+
+</br>
+
+</details>
+
+
+
 

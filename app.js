@@ -5,6 +5,7 @@ const bootstrap = require('./lib/bootstrap')
 const xsservices = require('./lib/xsenv/lib/xsservices')
 const servicebindingservices = require('./lib/xsenv/lib/serviceBindingService')
 const k8sservices = require('./lib/xsenv/lib/k8sservice')
+const cacert = require('./lib/xsenv/lib/cacert')
 
 let app = express();
 
@@ -26,7 +27,8 @@ app.get('/', function (req, res) {
       "/env/servicebindingservice/readservicebindingservices",
       "/env/servicebindingservice/readfiles",
       "/env/servicebindingservice/parseproperties",
-      "/env/k8sservice/readk8sservices"
+      "/env/k8sservice/readk8sservices",
+      "/env/cacert/loadcertificates"
     ]
   };
   res.send(obj);
@@ -103,6 +105,12 @@ app.get('/env/servicebindingservice/readk8sservices', function (req, res) {
 app.get('/env/xsservices/readservices', function (req, res) {
   let services = xsservices.readServices();
   res.send(services);
+})
+
+app.get('/env/cacert/loadcertificates', function (req, res) {
+  dirList = "C:\\Users\\vravipati\\Downloads\\certdicectory1\\signavio.crt;C:\\Users\\vravipati\\Downloads\\certdicectory2\\hds.crt";
+  let certs = cacert.loadCertificates(dirList)
+  res.send(certs);
 })
 
 app.listen(3000, function () {
