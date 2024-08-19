@@ -66,6 +66,18 @@
 
 </br>
 
+#### Testing
+
+</br>
+
+![alt text](../../images/approuter/env/IMG34.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG33.PNG)
+
+</br>
+
 </details>
 
 </br>
@@ -78,6 +90,26 @@
 </br>
 
 ![alt text](../../images/approuter/env/IMG28.PNG)
+
+</br>
+
+#### Testing
+
+</br>
+
+VCAP_SERVICES from CF
+
+</br>
+
+![alt text](../../images/approuter/env/IMG32.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG30.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG31.PNG)
 
 </br>
 

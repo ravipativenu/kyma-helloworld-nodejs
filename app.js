@@ -3,6 +3,7 @@ const path = require('path');
 const { getDestEnv, getServiceEnv } = require("./lib/utils/vcap-utils")
 const bootstrap = require('./lib/bootstrap')
 const xsservices = require('./lib/xsenv/lib/xsservices')
+const cfservices = require('./lib/xsenv/lib/cfservice')
 const servicebindingservices = require('./lib/xsenv/lib/serviceBindingService')
 const k8sservices = require('./lib/xsenv/lib/k8sservice')
 const cacert = require('./lib/xsenv/lib/cacert')
@@ -24,6 +25,7 @@ app.get('/', function (req, res) {
       "/env/xsservices/readservices",
       "/env/xsservices/loaddefaultservices",
       "/env/xsservices/filterservices",
+      "/env/cfservice/readcfservices",
       "/env/servicebindingservice/readservicebindingservices",
       "/env/servicebindingservice/readfiles",
       "/env/servicebindingservice/parseproperties",
@@ -75,8 +77,13 @@ app.get('/env/xsservices/loaddefaultservices', function (req, res) {
 });
 
 app.get('/env/xsservices/filterservices', function (req, res) {
-  let defaultServices = xsservices.filterServices({ "name" : "my-xsuaa" } );
-  res.send(defaultServices);
+  let filterservices = xsservices.filterServices({ "name" : "my-xsuaa" } );
+  res.send(filterservices);
+});
+
+app.get('/env/cfservice/readcfservices', function (req, res) {
+  let cloudfoundryservices = cfservices.readCFServices();
+  res.send(cloudfoundryservices);
 });
 
 app.get('/env/servicebindingservice/readservicebindingservices', function (req, res) {
