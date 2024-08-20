@@ -8,7 +8,7 @@ const cfservices = require('./lib/xsenv/lib/cfservice')
 const servicebindingservices = require('./lib/xsenv/lib/serviceBindingService')
 const k8sservices = require('./lib/xsenv/lib/k8sservice')
 const cacert = require('./lib/xsenv/lib/cacert')
-const filter = require('./lib/xsenv/lib/filter')
+const loadEnv = require('./lib/xsenv/lib/loadEnv')
 
 let app = express();
 
@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
       "/utils/vcaputils/getdestenv",
       "/utils/vcaputils/getserviceenv",
       "/getrouterconfig",
+      "/env/xsservices/loadenv",
       "/env/xsservices/readservices",
       "/env/xsservices/loaddefaultservices",
       "/env/xsservices/getservices/object",
@@ -73,6 +74,11 @@ app.get('/utils/vcaputils/getserviceenv', function (req, res) {
 
 app.get('/getrouterconfig', function (req, res) {
   res.send(routerConfig);
+});
+
+app.get('/env/xsservices/loadenv', function (req, res) {
+  loadEnv(path.join(process.cwd(), 'default-env.json'));
+  res.send(JSON.parse(process.env.VCAP_SERVICES));
 });
 
 app.get('/env/xsservices/loaddefaultservices', function (req, res) {
