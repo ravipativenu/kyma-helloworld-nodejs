@@ -1,4 +1,5 @@
 let express = require('express');
+const _ = require('lodash');
 const path = require('path');
 const { getDestEnv, getServiceEnv } = require("./lib/utils/vcap-utils")
 const bootstrap = require('./lib/bootstrap')
@@ -7,6 +8,7 @@ const cfservices = require('./lib/xsenv/lib/cfservice')
 const servicebindingservices = require('./lib/xsenv/lib/serviceBindingService')
 const k8sservices = require('./lib/xsenv/lib/k8sservice')
 const cacert = require('./lib/xsenv/lib/cacert')
+const filter = require('./lib/xsenv/lib/filter')
 
 let app = express();
 
@@ -24,13 +26,15 @@ app.get('/', function (req, res) {
       "/getrouterconfig",
       "/env/xsservices/readservices",
       "/env/xsservices/loaddefaultservices",
-      "/env/xsservices/filterservices",
+      "/env/xsservices/getservices/object",
+      "/env/xsservices/getservices/function",
       "/env/cfservice/readcfservices",
       "/env/servicebindingservice/readservicebindingservices",
       "/env/servicebindingservice/readfiles",
       "/env/servicebindingservice/parseproperties",
       "/env/k8sservice/readk8sservices",
-      "/env/cacert/loadcertificates"
+      "/env/cacert/loadcertificates",
+      "/env/filter/apply"
     ]
   };
   res.send(obj);
@@ -76,9 +80,14 @@ app.get('/env/xsservices/loaddefaultservices', function (req, res) {
   res.send(defaultServices);
 });
 
-app.get('/env/xsservices/filterservices', function (req, res) {
-  let filterservices = xsservices.filterServices({ "name" : "my-xsuaa" } );
-  res.send(filterservices);
+app.get('/env/xsservices/getservices/object', function (req, res) {
+  let filterservicesbyobject = xsservices.getServices({ "name" : "my-xsuaa-1"} ).name;
+  res.send(filterservicesbyobject);
+});
+
+app.get('/env/xsservices/getservices/function', function (req, res) {
+  let filterservicesbyfunc = xsservices.getServices({ uaa : matchesUaa } ).uaa;
+  res.send(filterservicesbyfunc);
 });
 
 app.get('/env/cfservice/readcfservices', function (req, res) {
@@ -95,7 +104,6 @@ app.get('/env/servicebindingservice/readfiles', function (req, res) {
   let directoryData = servicebindingservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
   res.send(directoryData);
 });
-
 
 app.get('/env/servicebindingservice/parseproperties', function (req, res) {
   let directoryData = servicebindingservices.readFiles(path.join(process.cwd(), "\\bindings\\xsuaa"));
@@ -119,6 +127,18 @@ app.get('/env/cacert/loadcertificates', function (req, res) {
   let certs = cacert.loadCertificates(dirList)
   res.send(certs);
 })
+
+
+// Helper methods
+
+function matchesUaa(service) {
+  if (_.includes(service.tags, 'xsuaa')) {
+    return true;
+  }
+  return false;
+}
+
+
 
 app.listen(3000, function () {
   routerConfig = bootstrap(options);

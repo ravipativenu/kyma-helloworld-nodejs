@@ -58,6 +58,53 @@
 
 <details>
 
+<summary>env - xsservices - getServices</summary>
+
+</br>
+
+![alt text](../../images/approuter/env/IMG35.PNG)
+
+</br>
+
+#### Testing
+
+</br>
+
+Object
+
+</br>
+
+![alt text](../../images/approuter/env/IMG36.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG37.PNG)
+
+</br>
+
+Function
+
+</br>
+
+![alt text](../../images/approuter/env/IMG38.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG39.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG40.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
 <summary>env - xsservices - filterServices</summary>
 
 </br>

@@ -31,6 +31,19 @@
 
 </details>
 
+</br>
+</br>
 
+<details>
+
+<summary>lib - configuration - uaa-config - matchesUaa</summary>
+
+</br>
+
+![alt text](../../images/approuter/IMG4.PNG)
+
+</br>
+
+</details>
 
 
