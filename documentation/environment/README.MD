@@ -15,11 +15,27 @@
 
 <details>
 
-<summary>env - xsservices - loaddefaultservices</summary>
+<summary>env - xsservices - loadDefaultServices</summary>
 
 </br>
 
 ![alt text](../../images/approuter/env/IMG1.PNG)
+
+</br>
+
+#### Testing
+
+</br>
+
+![alt text](../../images/approuter/env/IMG41.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG42.PNG)
+
+</br>
+
+![alt text](../../images/approuter/env/IMG43.PNG)
 
 </br>
 
