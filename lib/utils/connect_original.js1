@@ -13,10 +13,21 @@ const isPathMatch = (expected, actual) => expected === '' || (actual.startsWith(
 const escapeMap = {'"': '&quot;', '&': '&amp;', '\'': '&#39;', '<': '&lt;', '>': '&gt;', '\n': '<br>', '`': '&#x60;'};
 const escapeHtml = msg => msg.split('').map(ch => (escapeMap[ch] || ch)).join('').replace(/\x20{2}/g, ' &nbsp;');
 const isNotProduction = (process.env.NODE_ENV !== 'production');
+
+// This function is a custom middleware handler for an HTTP server, likely inspired by frameworks like Express.js.
 module.exports = () => {
-  logger.info("...utils/connect...")
+  
+  // Queues for Middleware:
+  // okQueue: Stores middleware functions that handle normal requests.
+  // errQueue: Stores middleware functions that handle errors.
   const okQueue = [], errQueue = [];
+  // Main Handler Function:
+  // This function processes incoming requests and responses.
+  // When a request comes in, the handle function is called with req, res, and an optional out function for error handling.
+  // The next function is defined within handle to manage the execution of middleware functions.
   const handle = (req, res, out) => {
+    // Error Handling:
+    // This part defines a default error handler if out is not provided.
     out = out || (err => {
       if (res.headersSent) { return; }
       if (!err) { res.statusCode = 404; return res.end('<html><body><pre>Cannot ' + escapeHtml(req.method) + ' ' + escapeHtml(encodeURI(req.url)) + '</pre></body></html>'); }
@@ -28,20 +39,40 @@ module.exports = () => {
       res.end();
     });
     req.originalUrl = req.url;
+    // Middleware Execution:
+    // This function iterates through the middleware queue, executing each middleware function in sequence.
     const next = (err) => {
+      // Handling Errors:
+      // If an error is passed to next and lastError is not already set:
+      // lastError is set to the current error.
+      // i is set to the index of the current middleware in the error queue.
+      // The queue is switched to errQueue (error-handling middleware queue).
+      // The error is added to the beginning of the args array.
       if (err && !lastError) { lastError = err; i = queue[i - 1][1]; queue = errQueue; args.unshift(lastError); }
+      // Iterating Through Middleware:
+      // The next function checks if there are more middleware functions to execute (i < queue.length).
       if (i < queue.length) {
+        // It verifies if the current middleware’s route matches the request path using isPathMatch.
+        // If the route does not match, it increments i and calls next() to move to the next middleware.
         if (!isPathMatch(queue[i][0].route, reqPathLowerCase)) { i++; return next(); }
         try {
+          // Executing Middleware:
+          // If the route matches, it tries to execute the current middleware function:
+          // Updates reqUrl to reflect the current middleware’s route.
           reqUrl = reqOrigin + ((u => u[0] === '/' ? u : '/' + u)(reqPath.slice(queue[i][0].route.length)));
+          // Calls the middleware function with the current arguments (args), which include req, res, and next
           return queue[i++][0].handle.apply(null, args);
         } catch (err) {
+          // If an error occurs during execution, it calls next(err) to handle the error.
           return next(err);
         }
       }
       out(err);
     };
+    // queue is set to okQueue (normal middleware queue), and i is initialized to 0.
     let args = [req, res, next], queue = okQueue, lastError = null, i = 0, reqUrl = req.url, reqOrigin = '', reqPath, reqPathLowerCase;
+    // Request URL Handling:
+    // This part manages the request URL, ensuring it can handle both full URLs and paths.
     Object.defineProperty(req, 'url', {
       get: () => reqUrl,
       set: (newUrl) => {
@@ -59,24 +90,39 @@ module.exports = () => {
       }
     });
     req.url = reqUrl;
+    // Starting Middleware Execution:
+    // The next function is initially called to start processing the middleware stack.
     next();
     return handle;
   };
+  // EventEmitter Integration:
+  // The statement Object.assign(handle, EventEmitter.prototype); is used to copy properties from the EventEmitter.prototype to the handle
+  // Object.assign:
+  // This is a method in JavaScript that copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
+  // Syntax: Object.assign(target, ...sources)
   Object.assign(handle, EventEmitter.prototype);
   handle.route = '/';
   handle.handle = handle;
   handle.stack = [];
+  // Middleware Registration:
+  // This method allows adding middleware functions to the handler.
   handle.use = (path, fn) => {
     if (typeof path !== 'string') { fn = path; path = ''; }
     if (path.at(-1) === '/') { path = path.slice(0, -1); }
     if (fn instanceof http.Server) { fn = fn.listeners('request')[0]; }
     if (fn.handle) { fn.route = path; }
+    // All the middleware functions are stored in the handle.stack array.
+    // Each middleware function is added to this stack when you call handle.use.
     handle.stack.push({ route: path.toLowerCase(), handle: fn });
     (fn.length < 4 ? okQueue : errQueue).push([handle.stack.at(-1), errQueue.length]);
     return handle;
   };
   logger.info('before http server creation')
+  // Server Creation:
+  // This method creates an HTTP server using the handler and starts listening for requests.
   handle.listen = (...args) => http.createServer(handle).listen(...args);
+  // Middleware Stack Management:
+  // This method manages the middleware stack, ensuring the queues are updated when the stack is modified.
   handle.stack.splice = function splice(start, deleteCount, ...items) {
     const r = Array.prototype.splice.call(handle.stack, start, deleteCount, ...items);
     okQueue.length = 0; errQueue.length = 0;
