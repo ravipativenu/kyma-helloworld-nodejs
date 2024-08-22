@@ -1,7 +1,0 @@
-module.exports = MiddlewareList;
-
-function MiddlewareList() {
-    this._middleware = [];
-}
-
-

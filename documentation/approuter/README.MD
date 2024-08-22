@@ -46,4 +46,33 @@
 
 </details>
 
+</br>
+</br>
+
+<details>
+
+<summary>lib - configuration - validators - validateApprouterStartOptions</summary>
+
+</br>
+
+![alt text](../../images/approuter/IMG5.PNG)
+
+</br>
+
+</details>
+
+</br>
+</br>
+
+<details>
+
+<summary>lib - configuration - validators - validateDestinations</summary>
+
+</br>
+
+![alt text](../../images/approuter/IMG6.PNG)
+
+</br>
+
+</details>
 
