@@ -1,4 +1,8 @@
-# kyma-helloworld-nodejs
+# kyma-helloworld-nodejs - branch xsenv
+
+<details>
+
+<summary>Install dependencies</summary>
 
 </br>
 
@@ -44,6 +48,7 @@ npm start
 
 docker build -t ravipativenu/kyma-helloworld-nodejs:latest .
 
+docker push ravipativenu/kyma-helloworld-nodejs:latest
 </br>
 
 ![alt text](images/IMG6.PNG)
@@ -97,6 +102,9 @@ Explore container image fiels and open them
 #### Deploy application to kubernetes using Deployment
 
 </br>
+
+kubectl -n vravipati apply -f ./kubernetes/deployment.yaml
+
 
 ![alt text](images/IMG15.PNG)
 
@@ -204,4 +212,6 @@ View container logs
 ![alt text](images/IMG28.PNG)
 
 </br>
+
+</details>
 

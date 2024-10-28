@@ -2,15 +2,15 @@
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "service-kyma-helloworld-nodejs"
+  name: "service-helloworld-nodejs"
   namespace: "hello"
   labels:
-    app: "service-kyma-helloworld-nodejs"
+    app: "service-helloworld-nodejs"
 spec:
   ports:
     - protocol: "TCP"
       port: 80
       targetPort: 3000
   selector:
-    app: "kyma-helloworld-nodejs"
+    app: "helloworld-nodejs"
   type: "LoadBalancer"

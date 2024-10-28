@@ -1,0 +1,336 @@
+{
+    "helloworld-destination-instance": {
+        "credentials": {
+            ".metadata": {
+                "credentialProperties": [
+                    {
+                        "name": "uaadomain",
+                        "format": "text"
+                    },
+                    {
+                        "name": "url",
+                        "format": "text"
+                    },
+                    {
+                        "name": "xsappname",
+                        "format": "text"
+                    },
+                    {
+                        "name": "credential-type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instanceid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantmode",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uri",
+                        "format": "text"
+                    },
+                    {
+                        "name": "verificationkey",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientsecret",
+                        "format": "text"
+                    },
+                    {
+                        "name": "identityzone",
+                        "format": "text"
+                    }
+                ],
+                "metaDataProperties": [
+                    {
+                        "name": "instance_name",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instance_guid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "plan",
+                        "format": "text"
+                    },
+                    {
+                        "name": "label",
+                        "format": "text"
+                    },
+                    {
+                        "name": "type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tags",
+                        "format": "json"
+                    }
+                ]
+            },
+            "clientid": "sb-clone76d448be3d3245f4912157d9992c7dfc!b344033|destination-xsappname!b62",
+            "clientsecret": "a6818b9d-6af8-4150-a1b0-aa59051b9237$4HMPZugCng6x1LHHo9gQOkmdLQxsYCmrFi4ky677NOY=",
+            "credential-type": "binding-secret",
+            "identityzone": "b54f235btrial",
+            "instance_guid": "76d448be-3d32-45f4-9121-57d9992c7dfc",
+            "instance_name": "helloworld-destination-instance",
+            "instanceid": "76d448be-3d32-45f4-9121-57d9992c7dfc",
+            "label": "destination",
+            "plan": "lite",
+            "tags": "[\"destination\",\"conn\",\"connsvc\"]",
+            "tenantid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+            "tenantmode": "dedicated",
+            "type": "destination",
+            "uaadomain": "authentication.us10.hana.ondemand.com",
+            "uri": "https://destination-configuration.cfapps.us10.hana.ondemand.com",
+            "url": "https://b54f235btrial.authentication.us10.hana.ondemand.com",
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqaAeVKye6mcnDkkXc0nF\n55JmMuu9eCeu4HKibTtdZwn4xpTys/qSsN+KC9tzuO5vQjNoiCy6dKRxMIvCQMTW\nuSs+5H36zE8+qDv+n/XxnT9+YtEtRqBaD/ucbkdyciSdKkwjHCsii5CG7IdVf3DQ\nnnLFrakI0qF/Yag9zAfxb8ENpcBkG9oSpor2Aop4BSuZWozHtIG1DwVJbEQ8qQ72\nYIxDjYwAVAmPpdRhoXx0WgqikhWtl0TIibk76jwc40mZYJNeoHyWQ1/5Ys6HDAy0\nwsOSiDliBf2hBvCcXp0CWIGCXaiyRx9LXC2FsXaK09YqnLK0hBN8373Md94ldmyo\nlQIDAQAB\n-----END PUBLIC KEY-----",
+            "xsappname": "clone76d448be3d3245f4912157d9992c7dfc!b344033|destination-xsappname!b62"
+        },
+        "name": "helloworld-destination-instance",
+        "label": "destination",
+        "tags": [
+            "destination",
+            "conn",
+            "connsvc"
+        ]
+    },
+    "helloworld-html5-apps-repo-instance": {
+        "credentials": {
+            ".metadata": {
+                "credentialProperties": [
+                    {
+                        "name": "app_host_id",
+                        "format": "text"
+                    },
+                    {
+                        "name": "content_endpoint",
+                        "format": "text"
+                    },
+                    {
+                        "name": "saasregistryenabled",
+                        "format": "json"
+                    },
+                    {
+                        "name": "sap.cloud.service",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uaa",
+                        "format": "json"
+                    },
+                    {
+                        "name": "uri",
+                        "format": "text"
+                    },
+                    {
+                        "name": "vendor",
+                        "format": "text"
+                    }
+                ],
+                "metaDataProperties": [
+                    {
+                        "name": "instance_name",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instance_guid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "plan",
+                        "format": "text"
+                    },
+                    {
+                        "name": "label",
+                        "format": "text"
+                    },
+                    {
+                        "name": "type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tags",
+                        "format": "json"
+                    }
+                ]
+            },
+            "app_host_id": "7b88b6ae-d5bc-48b2-a2d3-709620da5f87",
+            "content_endpoint": "https://html5-apps-repo-dt.cfapps.us10.hana.ondemand.com",
+            "instance_guid": "7b88b6ae-d5bc-48b2-a2d3-709620da5f87",
+            "instance_name": "helloworld-html5-apps-repo-instance",
+            "label": "html5-apps-repo",
+            "plan": "app-host",
+            "saasregistryenabled": "true",
+            "sap.cloud.service": "html5-apps-repo-dt",
+            "tags": "[\"html5appsrepo\",\"html5-apps-repo-rt\",\"html5-apps-rt\",\"html5-apps-repo-dt\",\"html5-apps-dt\"]",
+            "type": "html5-apps-repo",
+            "uaa": {
+                "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                "clientid": "sb-7b88b6ae-d5bc-48b2-a2d3-709620da5f87!b344033|html5-apps-repo-uaa!b424",
+                "clientsecret": "1f0ae692-6ba4-4045-933d-7128715f7f28$qACOinAEHbIF-eLOcFGx5EE9IrnGakUYycIpTkJTKFs=",
+                "credential-type": "binding-secret",
+                "identityzone": "b54f235btrial",
+                "identityzoneid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+                "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                "serviceInstanceId": "7b88b6ae-d5bc-48b2-a2d3-709620da5f87",
+                "subaccountid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+                "tenantid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+                "tenantmode": "dedicated",
+                "uaadomain": "authentication.us10.hana.ondemand.com",
+                "url": "https://b54f235btrial.authentication.us10.hana.ondemand.com",
+                "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqaAeVKye6mcnDkkXc0nF\n55JmMuu9eCeu4HKibTtdZwn4xpTys/qSsN+KC9tzuO5vQjNoiCy6dKRxMIvCQMTW\nuSs+5H36zE8+qDv+n/XxnT9+YtEtRqBaD/ucbkdyciSdKkwjHCsii5CG7IdVf3DQ\nnnLFrakI0qF/Yag9zAfxb8ENpcBkG9oSpor2Aop4BSuZWozHtIG1DwVJbEQ8qQ72\nYIxDjYwAVAmPpdRhoXx0WgqikhWtl0TIibk76jwc40mZYJNeoHyWQ1/5Ys6HDAy0\nwsOSiDliBf2hBvCcXp0CWIGCXaiyRx9LXC2FsXaK09YqnLK0hBN8373Md94ldmyo\nlQIDAQAB\n-----END PUBLIC KEY-----",
+                "xsappname": "7b88b6ae-d5bc-48b2-a2d3-709620da5f87!b344033|html5-apps-repo-uaa!b424",
+                "zoneid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c"
+            },
+            "uri": "https://html5-apps-repo-dt.cfapps.us10.hana.ondemand.com",
+            "vendor": "SAP"
+        },
+        "name": "helloworld-html5-apps-repo-instance",
+        "label": "html5-apps-repo",
+        "tags": [
+            "html5appsrepo",
+            "html5-apps-repo-rt",
+            "html5-apps-rt",
+            "html5-apps-repo-dt",
+            "html5-apps-dt",
+            "html5-apps-repo"
+        ]
+    },
+    "helloworld-xsuaa-instance": {
+        "credentials": {
+            ".metadata": {
+                "credentialProperties": [
+                    {
+                        "name": "apiurl",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientsecret",
+                        "format": "text"
+                    },
+                    {
+                        "name": "credential-type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "identityzone",
+                        "format": "text"
+                    },
+                    {
+                        "name": "identityzoneid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantmode",
+                        "format": "text"
+                    },
+                    {
+                        "name": "clientid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "uaadomain",
+                        "format": "text"
+                    },
+                    {
+                        "name": "url",
+                        "format": "text"
+                    },
+                    {
+                        "name": "zoneid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "sburl",
+                        "format": "text"
+                    },
+                    {
+                        "name": "serviceInstanceId",
+                        "format": "text"
+                    },
+                    {
+                        "name": "subaccountid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tenantid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "verificationkey",
+                        "format": "text"
+                    },
+                    {
+                        "name": "xsappname",
+                        "format": "text"
+                    }
+                ],
+                "metaDataProperties": [
+                    {
+                        "name": "instance_name",
+                        "format": "text"
+                    },
+                    {
+                        "name": "instance_guid",
+                        "format": "text"
+                    },
+                    {
+                        "name": "plan",
+                        "format": "text"
+                    },
+                    {
+                        "name": "label",
+                        "format": "text"
+                    },
+                    {
+                        "name": "type",
+                        "format": "text"
+                    },
+                    {
+                        "name": "tags",
+                        "format": "json"
+                    }
+                ]
+            },
+            "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+            "clientid": "sb-helloworld!t344033",
+            "clientsecret": "eee95382-1a69-49e7-9c86-f2f69923bd96$4EWKlS2WjFwRH3NlyJq5leQwJQW_JQoV0u5j28KyLgQ=",
+            "credential-type": "binding-secret",
+            "identityzone": "b54f235btrial",
+            "identityzoneid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+            "instance_guid": "cf744117-ff31-4a3e-9009-7d8795054636",
+            "instance_name": "helloworld-xsuaa-instance",
+            "label": "xsuaa",
+            "plan": "application",
+            "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+            "serviceInstanceId": "cf744117-ff31-4a3e-9009-7d8795054636",
+            "subaccountid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+            "tags": "[\"xsuaa\"]",
+            "tenantid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c",
+            "tenantmode": "shared",
+            "type": "xsuaa",
+            "uaadomain": "authentication.us10.hana.ondemand.com",
+            "url": "https://b54f235btrial.authentication.us10.hana.ondemand.com",
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqaAeVKye6mcnDkkXc0nF\n55JmMuu9eCeu4HKibTtdZwn4xpTys/qSsN+KC9tzuO5vQjNoiCy6dKRxMIvCQMTW\nuSs+5H36zE8+qDv+n/XxnT9+YtEtRqBaD/ucbkdyciSdKkwjHCsii5CG7IdVf3DQ\nnnLFrakI0qF/Yag9zAfxb8ENpcBkG9oSpor2Aop4BSuZWozHtIG1DwVJbEQ8qQ72\nYIxDjYwAVAmPpdRhoXx0WgqikhWtl0TIibk76jwc40mZYJNeoHyWQ1/5Ys6HDAy0\nwsOSiDliBf2hBvCcXp0CWIGCXaiyRx9LXC2FsXaK09YqnLK0hBN8373Md94ldmyo\nlQIDAQAB\n-----END PUBLIC KEY-----",
+            "xsappname": "helloworld!t344033",
+            "zoneid": "5eaa6c4e-bd68-4828-ab2d-f7609188f40c"
+        },
+        "name": "helloworld-xsuaa-instance",
+        "label": "xsuaa",
+        "tags": [
+            "xsuaa"
+        ]
+    }
+}

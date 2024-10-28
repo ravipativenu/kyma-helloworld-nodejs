@@ -1,30 +1,65 @@
 ---
-apiVersion: "apps/v1"
-kind: "Deployment"
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
 metadata:
-  name: "deployment-kyma-helloworld-nodejs"
-  namespace: "hello"
   labels:
-    app: "deployment-kyma-helloworld-nodejs"
+    app: helloworld-nodejs
+  name: helloworld-nodejs
+spec:
+  gateway: kyma-system/kyma-gateway
+  host: helloworld-nodejs
+  service:
+    name: helloworld-nodejs
+    port: 3000
+  rules:
+    - path: /.*
+      methods: ["GET", "POST"]
+      accessStrategies:
+        - handler: noop
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-nodejs
+  namespace: vravipati
+  labels:
+    app: helloworld-nodejs
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+  selector:
+    app: helloworld-nodejs
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-helloworld-nodejs
+  namespace: vravipati
+  labels:
+    app: deployment-helloworld-nodejs
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "kyma-helloworld-nodejs"
+      app: helloworld-nodejs
   template:
     metadata:
       labels:
-        app: "kyma-helloworld-nodejs"
+        app: helloworld-nodejs
     spec:
       containers:
-        - name: "kyma-helloworld-nodejs-container"
-          image: "ravipativenu/kyma-helloworld-nodejs"
+        - name: helloworld-nodejs
+          image: ravipativenu/kyma-helloworld-nodejs:latest
           volumeMounts:
-          - name: my-xsuaa-secret-volume
-            mountPath: /etc/secrets/sapcp/xsuaa/my-xsuaa-secret-volume
+          - name: helloworld-html5-apps-repo-secret-volume
+            mountPath: /etc/secrets/sapcp/html5-apps-repo/helloworld-html5-apps-repo-instance
             readOnly: true
-          - name: my-destination-secret-volume
-            mountPath: /etc/secrets/sapcp/destination/my-destination-secret-volume
+          - name: helloworld-destination-secret-volume
+            mountPath: /etc/secrets/sapcp/destination/helloworld-destination-instance
+            readOnly: true
+          - name: helloworld-xsuaa-secret-volume
+            mountPath: /etc/secrets/sapcp/xsuaa/helloworld-xsuaa-instance
             readOnly: true
           resources:
             requests:
@@ -34,9 +69,89 @@ spec:
               memory: "128Mi"
               cpu: "500m"
       volumes:
-      - name: my-xsuaa-secret-volume
+      - name: helloworld-html5-apps-repo-secret-volume
         secret:
-          secretName: my-xsuaa-secret
-      - name: my-destination-secret-volume
+          secretName: helloworld-html5-apps-repo-binding
+      - name: helloworld-destination-secret-volume
         secret:
-          secretName: my-destination-secret
+          secretName: helloworld-destination-binding
+      - name: helloworld-xsuaa-secret-volume
+        secret:
+          secretName: helloworld-xsuaa-binding
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceInstance
+metadata:
+  name: helloworld-html5-apps-repo-instance
+spec:
+  serviceOfferingName: html5-apps-repo
+  servicePlanName: app-host
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceInstance
+metadata:
+  name: helloworld-destination-instance
+spec:
+  serviceOfferingName: destination
+  servicePlanName: lite
+  parameters:
+    HTML5Runtime_enabled: true
+    version: "1.0.0"
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceInstance
+metadata:
+  name: helloworld-xsuaa-instance
+spec:
+  serviceOfferingName: xsuaa
+  servicePlanName: application
+  parameters:
+    xsappname: helloworld
+    tenant-mode: shared
+    scopes:
+      - name: "$XSAPPNAME.Callback"
+        description: "With this scope set, the callbacks for tenant onboarding, offboarding and getDependencies can be called."
+        grant-as-authority-to-apps :
+          - $XSAPPNAME(application,sap-provisioning,tenant-onboarding)
+    role-templates:
+      - name: TOKEN_EXCHANGE
+        description: Token exchange
+        scope-references:
+          - uaa.user
+      - name: "MultitenancyCallbackRoleTemplate"
+        description: "Call callback-services of applications"
+        scope-references:
+          - "$XSAPPNAME.Callback"
+    oauth2-configuration:
+      grant-types:
+        - authorization_code
+        - client_credentials
+        - password
+        - refresh_token
+        - urn:ietf:params:oauth:grant-type:saml2-bearer
+        - user_token
+        - client_x509
+        - urn:ietf:params:oauth:grant-type:jwt-bearer
+      redirect-uris:
+        - https://*/**
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceBinding
+metadata:
+  name: helloworld-html5-apps-repo-binding
+spec:
+  serviceInstanceName: helloworld-html5-apps-repo-instance
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceBinding
+metadata:
+  name: helloworld-destination-binding
+spec:
+  serviceInstanceName: helloworld-destination-instance
+---
+apiVersion: services.cloud.sap.com/v1
+kind: ServiceBinding
+metadata:
+  name: helloworld-xsuaa-binding
+spec:
+  serviceInstanceName: helloworld-xsuaa-instance
